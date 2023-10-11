@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Robot", sans-serif;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #9700ef, rgb(179, 82, 98));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    opacity: 0.4;
+}
+
+.weather {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: #dbebd8;
+    padding: 3rem;
+    
+}
+
+.weather div {
+    margin: 1rem;
+}
+
+.weather1 {
+    font-size: 4rem;
+}
+
+.weather3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather3 > span {
+    margin: 0.4rem;
+    
+
+}
+
+.weather p {
+    font-size: 2rem;
+}
+
+.weather2 > span, .weather3 > span {
+    font-size: 0.75rem;
+}
+
+nav {
+    height: 100px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.0.09);
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    background-color: rgba(5, 5, 5, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+nav form {
+    width: 70%;
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 26px;
+    padding: 0 1rem;
+    grid-template-columns: 5fr 1fr;
+}
+
+nav form .search{
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 98%;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease-in;
+
+}
+
+nav form .search:focus{
+    outline: none;
+    border-bottom: 1px solid white;
+}
+
+nav form button {
+    background: linear-gradient(to right, rgb(194, 68, 253), rgb(0, 26, 255));
+    cursor: pointer;
+    position: relative;
+    border-radius: 26px;
+    right: -23%;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 700;
+    background-color: #57a5c6;
+    transition: .3s;
+}
+
+nav form button:hover {
+    opacity: 0.8;
+}
+
+nav form button:active {
+    opacity: 0.6;
+}
+
+
+
+
