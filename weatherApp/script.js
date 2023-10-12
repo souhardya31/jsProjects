@@ -17,7 +17,6 @@ const fetchData = async (target) => {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(data);
     const {
         current: {temp_c, 
         condition: {text, icon}},
@@ -26,7 +25,6 @@ const fetchData = async (target) => {
     }  = data;
 
 
-    console.log(data);
     updateDom(temp_c, name, icon, text, localtime_epoch);
     
     } catch (error) {
@@ -43,9 +41,7 @@ function updateDom(temperature, city, emoji, text, time){
     .toLocaleString()
     .replaceAll("/", "-");
     const day = getDay((new Date(time*1000)).getDay());
-    console.log(day);
     timeField.innerText = `${day} ${date}`;
-    console.log(date);
 }
 
 function getDay(num) {
@@ -81,6 +77,12 @@ fetchData(target);
 const search = (e) => {
     e.preventDefault();
     target = searchField.value;
+
+    if(!target){
+        alert("Please enter location");
+        return 0;
+    }
+
     fetchData(target);
 
 }
