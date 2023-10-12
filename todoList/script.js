@@ -3,6 +3,21 @@ window.addEventListener('load', (e) => {
     const input = document.querySelector("#new-task-input")
     const listEl = document.querySelector("#tasks")
 
+    form.addEventListener('submit', (e1) => {
+        e1.preventDefault()
+
+        const task = input.value
+
+        if (!task) {
+            alert("Please enter a task")
+            return 0;
+        }
+
+        createTaskElement(task)
+
+        storeTasks()
+    })
+
     function createTaskElement(task) {
         const taskEl = document.createElement("div")
         taskEl.classList.add("task")
@@ -73,20 +88,5 @@ window.addEventListener('load', (e) => {
 
         input.value = " "
     }
-
-    form.addEventListener('submit', (e1) => {
-        e1.preventDefault()
-
-
-        const task = input.value
-        createTaskElement(task)
-
-        if (!task) {
-            alert("Please enter a task")
-        }
-
-        storeTasks()
-
-
-    })
+    
 })
